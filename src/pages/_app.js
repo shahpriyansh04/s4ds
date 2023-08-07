@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "@smastrom/react-rating/style.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/lib/theme-provider";
 import { Reem_Kufi } from "next/font/google";
 
 const font = Reem_Kufi({
