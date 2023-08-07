@@ -33,24 +33,24 @@ export default function Home() {
   });
 
   return (
-    <div className="container bg-background  mx-auto w-3/5">
+    <div className="container  xl:w-3/5 w-full ">
       {isLoading && (
-        <div className="flex  items-center justify-evenly">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3   items-center justify-evenly">
           <SkeletonProductCard />
           <SkeletonProductCard />
           <SkeletonProductCard />
         </div>
       )}
       {!isLoading && (
-        <div className="flex flex-col items-center space-y-5 p-5">
-          <div className="flex items-center justify-between w-full p-5">
-            <h1 className="text-6xl">Products</h1>
+        <div className="flex flex-col justify-center items-center space-y-5 w-full p-5">
+          <div className="flex items-center justify-between w-full  p-0">
+            <h1 className="text-4xl md:text-6xl">Products</h1>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="primary" size="icon">
                   <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                   <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
+                  {/* <span className="sr-only">Toggle theme</span> */}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -66,7 +66,7 @@ export default function Home() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="grid grid-cols-3 gap3 items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 ">
             {data?.products.map((product) => {
               return (
                 <ProductCard
@@ -80,7 +80,7 @@ export default function Home() {
                 />
               );
             })}
-            <div class="col-span-3 flex space-x-5 justify-center">
+            <div class="col-span-1 md:col-span-2 2xl:col-span-3 flex space-x-5 justify-center">
               <button
                 className="border-2 border-black rounded-lg p-4 disabled:cursor-pointer disabled:bg-foreground disabled:text-background"
                 onClick={() => {
